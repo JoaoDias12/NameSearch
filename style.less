@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+    font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
+    font-size:12px;
+    width: 98vw;
+    height: 100vh;
+    background: #002f6c1a;
+    padding: 10px;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;               
+  height: 8px;               
+}
+
+body::-webkit-scrollbar-track {
+  background: rgb(206, 206, 206);        
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #002F6C;   
+  border-radius: 20px;       
+  border: 1px solid rgb(255, 255, 255);  
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+h1 {
+    color: #002F6C;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.input-section, .search-section {
+    margin-bottom: 15px;
+}
+
+textarea, input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+
+    outline: none;
+}
+
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #002F6C;
+    color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #004494;
+}
+
+/* (Mantém todo o CSS anterior e adiciona:) */
+
+.button-group {
+  display: flex;
+  gap: 8px;
+}
+
+.button-group button {
+  flex: 1;
+}
+
+.clear-btn {
+  background-color: #d9534f !important;
+}
+
+.clear-btn:hover {
+  background-color: #c9302c !important;
+}
+
+.results-section {
+    margin-top: 15px;
+}
+
+#resultsCount {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #002F6C;
+}
+
+.group {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.group-header {
+    font-weight: bold;
+    color: #002F6C;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.person-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.person-card p {
+    margin: 3px 0;
+}
+
+.person-card .main-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.person-card .details {
+    display: none;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed #ddd;
+}
+
+.person-card.expanded .details {
+    display: block;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #002F6C;
+}
