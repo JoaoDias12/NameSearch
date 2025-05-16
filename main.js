@@ -18,9 +18,28 @@ document.addEventListener('DOMContentLoaded', function () {
       return
     }
 
-    const peopleData = parseData(rawData)
+    // Carrega os dados existentes
+    const existingData = localStorage.getItem('peopleData')
+    let peopleData = existingData ? JSON.parse(existingData) : {}
+
+    // Processa os novos dados
+    const newData = parseData(rawData)
+
+    // Combina os dados existentes com os novos
+    for (const groupName in newData) {
+      if (peopleData[groupName]) {
+        // Se o grupo já existe, adiciona as novas pessoas
+        peopleData[groupName] = peopleData[groupName].concat(newData[groupName])
+      } else {
+        // Se é um grupo novo, cria ele
+        peopleData[groupName] = newData[groupName]
+      }
+    }
+
     saveData(peopleData)
     displayAllPeople(peopleData)
+    dataInput.value = '' // Limpa o textarea após processar
+    alert('Dados adicionados com sucesso!')
   })
 
   // Limpar dados
